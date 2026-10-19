@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cluck & Crunch Restaurant</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff8ed;
+            color: #333;
+        }
+
+        /* NAVIGATION BAR */
+
+        nav {
+            background: linear-gradient(to right, #b22222, #e63946);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 35px;
+            box-shadow: 0px 4px 10px gray;
+        }
+
+        .logo {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 18px 22px;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff595e;
+        }
+
+        /* DROPDOWN MENU */
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #292929;
+            width: 220px;
+            z-index: 10;
+            box-shadow: 0px 5px 10px gray;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li a {
+            padding: 18px;
+            border-bottom: 1px solid #444;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #e63946;
+        }
+
+        /* HOMEPAGE */
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #fff1d6, #fff8ed);
+        }
+
+        .hero h1 {
+            color: #b22222;
+            font-size: 42px;
+            text-shadow: 2px 2px 4px lightgray;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 750px;
+            margin: 20px auto;
+            line-height: 1.7;
+        }
+
+        /* ORDER BUTTON */
+
+        .order-button {
+            display: inline-block;
+            background-color: #e63946;
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 20px;
+            margin-top: 20px;
+            transition: opacity 0.3s;
+        }
+
+        .order-button:hover {
+            opacity: 0.5;
+        }
+
+        /* FOOD IMAGES */
+
+        .food-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .food-section h2 {
+            color: #b22222;
+            font-size: 32px;
+        }
+
+        .food-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .food-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px lightgray;
+            width: 300px;
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.4s, opacity 0.4s;
+        }
+
+        .food-card img:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+
+        .food-card h3 {
+            color: #b22222;
+        }
+
+        /* MENU TABLE */
+
+        .menu-section {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .menu-section h2 {
+            color: #b22222;
+            font-size: 32px;
+        }
+
+        table {
+            margin: 20px auto;
+            width: 70%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0px 4px 12px lightgray;
+        }
+
+        th {
+            background-color: #b22222;
+            color: white;
+            padding: 15px;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff1d6;
+        }
+
+        tr:hover {
+            background-color: #ffe0b2;
+        }
+
+        /* ABOUT SECTION */
+
+        .about {
+            text-align: center;
+            padding: 40px;
+            background-color: #fff1d6;
+        }
+
+        .about h2 {
+            color: #b22222;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #b22222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <nav>
+
+        <div class="logo">
+            🍗 CLUCK & CRUNCH
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#menu">Menu</a>
+
+                <ul>
+                    <li><a href="#tenders">Chicken Tenders 🍗</a></li>
+                    <li><a href="#sandwiches">Chicken Sandwiches</a></li>
+                    <li><a href="#menu">Combos & Meals</a></li>
+                    <li><a href="#menu">Sides & Snacks</a></li>
+                    <li><a href="#menu">Drinks</a></li>
+                    <li><a href="#menu">Sauces</a></li>
+                </ul>
+
+            </li>
+
+            <li>
+                <a href="#specials">Specials</a>
+
+                <ul>
+                    <li><a href="#specials">Monday Tender Deal</a></li>
+                    <li><a href="#specials">Student Specials</a></li>
+                    <li><a href="#specials">Family Meal Deal</a></li>
+                </ul>
+
+            </li>
+
+            <li>
+                <a href="#locations">Locations</a>
+            </li>
+
+            <li>
+                <a href="#about">About Us</a>
+
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#about">Our Ingredients</a></li>
+                    <li><a href="#about">Contact Us</a></li>
+                </ul>
+
+            </li>
+
+            <li>
+                <a href="#menu">Order Now</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HOMEPAGE -->
+
+    <section class="hero" id="home">
+
+        <h1>Welcome to Cluck & Crunch!</h1>
+
+        <h2>Fresh. Crispy. Delicious.</h2>
+
+        <p>
+            At Cluck & Crunch, we believe great chicken brings
+            people together! We specialize in crispy, golden
+            chicken tenders and juicy chicken sandwiches made
+            fresh with quality ingredients.
+
+            Whether you're craving a classic chicken sandwich,
+            spicy tenders, or a delicious combo meal,
+            we've got something for everyone.
+
+            Our mission is to serve flavorful, affordable,
+            and satisfying meals that keep you coming back
+            for more!
+        </p>
+
+        <a href="#menu" class="order-button">
+            ORDER NOW
+        </a>
+
+    </section>
+
+
+    <!-- FOOD IMAGES -->
+
+    <section class="food-section">
+
+        <h2>Our Fan Favorites</h2>
+
+        <div class="food-container">
+
+            <div class="food-card" id="tenders">
+
+                <img
+                src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600"
+                alt="Crispy Chicken Tenders">
+
+                <h3>Signature Chicken Tenders</h3>
+
+                <p>
+                    Golden, crispy chicken tenders seasoned
+                    to perfection and served with your
+                    favorite dipping sauce.
+                </p>
+
+            </div>
+
+
+            <div class="food-card" id="sandwiches">
+
+                <img
+                src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=600"
+                alt="Crispy Chicken Sandwich">
+
+                <h3>Classic Chicken Sandwich</h3>
+
+                <p>
+                    A juicy, crispy chicken fillet served
+                    on a toasted bun with fresh lettuce,
+                    pickles, and our signature sauce.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MENU TABLE -->
+
+    <section class="menu-section" id="menu">
+
+        <h2>Our Menu</h2>
+
+        <p>Delicious food at affordable prices!</p>
+
+        <table>
+
+            <tr>
+                <th>Menu Item</th>
+                <th>Price</th>
+            </tr>
+
+            <tr>
+                <td>3 Piece Chicken Tenders</td>
+                <td>$7.99</td>
+            </tr>
+
+            <tr>
+                <td>5 Piece Chicken Tenders</td>
+                <td>$10.99</td>
+            </tr>
+
+            <tr>
+                <td>Classic Chicken Sandwich</td>
+                <td>$8.99</td>
+            </tr>
+
+            <tr>
+                <td>Spicy Chicken Sandwich</td>
+                <td>$9.49</td>
+            </tr>
+
+            <tr>
+                <td> Fries</td>
+                <td>$3.99</td>
+            </tr>
+
+            <tr>
+                <td>Soft Drinks</td>
+                <td>$1.49</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- SPECIALS -->
+
+    <section class="about" id="specials">
+
+        <h2>Weekly Specials</h2>
+
+        <p>
+            Enjoy our Monday Tender Deal with discounted
+            chicken tenders!
+
+            Students can enjoy special combo pricing on Tuesdays 
+
+        </p>
+
+    </section>
+
+
+    <!-- LOCATIONS -->
+
+    <section class="about" id="locations">
+
+        <h2>Visit Us!</h2>
+
+        <p>
+            Cluck & Crunch is your go-to spot for
+            fresh chicken tenders and sandwiches.
+
+            Stop by and enjoy the best chicken in town
+            with your friends and family!
+        </p>
+
+    </section>
+
+
+    <!-- ABOUT US -->
+
+    <section class="about" id="about">
+
+        <h2>About Cluck & Crunch</h2>
+
+        <p>
+            Cluck & Crunch was created with one simple goal:
+            to serve the best crispy chicken in town!
+
+            We take pride in using quality ingredients,
+            bold seasonings, and freshly prepared meals.
+
+            Our restaurant is all about bringing people
+            together through delicious food, friendly
+            service, and affordable prices.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Kimberly Perez |
+            Cluck & Crunch Restaurant.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
